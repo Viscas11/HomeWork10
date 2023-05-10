@@ -28,9 +28,25 @@ public class Main {
             System.out.println("Установите версию приложения для Android по ссылке");
         }
     }
+    public static int calculationDay () {
+        int deliveryDistance = 95;
+        if (deliveryDistance <= 20) {
+            System.out.println("Потребуется 1 день для доставки");
+        }
+        if (deliveryDistance > 20 && deliveryDistance <= 60) {
+            System.out.println("Потребуется 2 дня для доставки");
+        }
+        if (deliveryDistance > 60 && deliveryDistance <= 100) {
+            System.out.println("потребуется 3 дня для доставки");
+        } else {
+            System.out.println("Доставки нет");
+        }
+        return deliveryDistance;
+    }
         public static void main (String[]args) {
             task1();
             task2();
+            task3();
         }
            public static void task1(){
             System.out.println("Задача 1");
@@ -39,5 +55,9 @@ public class Main {
            public static void task2(){
                System.out.println("Задача 2");
              installClients();
-           }
+    }
+           public static void task3(){
+               System.out.println("Задача 3");
+           calculationDay();
+    }
 }
