@@ -25,16 +25,10 @@ public class Main {
         }
     }
     public static int calculationDay (int deliveryDistance) {
-        if (deliveryDistance <= 20) {
-             int daysdelivery = 1;
-        }
-        if (deliveryDistance > 20 && deliveryDistance <= 60) {
-            int daydelivery = 2 ;
-        }
-        if (deliveryDistance > 60 && deliveryDistance <= 100) {
-            int daysdelivery = 3;
-        }
-        return deliveryDistance;
+        if (deliveryDistance < 20) return 1;
+        else if (deliveryDistance < 60) return 2;
+        else if (deliveryDistance <= 100) return 3;
+        else return -1;
     }
         public static void main (String[]args) {
             task1();
@@ -52,21 +46,12 @@ public class Main {
                int clientDeviceYear = LocalDate.now().getYear();
              installClients(clientOS, clientDeviceYear );
     }
-           public static void task3(){
+           public static void task3() {
                System.out.println("Задача 3");
                int deliveryDistance = 95;
-           int days = calculationDay(deliveryDistance);
-           if (days == 1) {
-                   System.out.println("Потребуется 1 день для доставки");
-               }
-           if (days == 2)  {
-               System.out.println("Потребуется 2 дня для доставки");
+               int days = calculationDay(deliveryDistance);
+               if(days > 0)
+                   System.out.println(" Потребуется дней: " + days);
+               else System.out.println("Доставки нет");
            }
-           if (days == 3) {
-               System.out.println("потребуется 3 дня для доставки");
-           }
-           else {
-               System.out.println("Доставки нет");
-           }
-    }
 }
